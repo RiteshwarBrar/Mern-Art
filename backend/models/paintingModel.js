@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
-const Schema = new mongoose.Schema
+//const Schema = new mongoose.Schema --redundant code--
 
-const paintingSchema = new Schema({
+const paintingSchema = new mongoose.Schema({
     title:{
         type: String,
         required: true
     },
     date:{
-        type: Date,
+        type: String,
         required: true
     },
     description:{
