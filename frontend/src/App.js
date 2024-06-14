@@ -4,7 +4,7 @@ import Home from './pages/home.js';
 import Paintings from './pages/paintings.js';
 import About from './pages/about.js';
 import NotFound from './pages/notfound.js';
-import {NavBar} from './components/NavBar';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
