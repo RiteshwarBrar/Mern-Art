@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import PaintingCard from "../components/PaintingCard";
+import AdditemForm from "../components/AdditemForm";
 
 const Inventory = () => {
     
     const [inventory, setInventory] = useState([]);
     const currDate = new Date().toLocaleDateString("en-IN")
+
     useEffect(() => {
 
       const fetchPaintings = async ()=>{  
@@ -19,7 +21,7 @@ const Inventory = () => {
       }
 
       fetchPaintings();
-    }, []);
+    }, [currDate]);
 
 
 
@@ -29,7 +31,7 @@ const Inventory = () => {
     return (
       <div className="inventory">
         <h1>Inventory</h1>
-        <Button variant="primary">Add Item</Button>
+        <AdditemForm/>
         {
             inventory && inventory.map(painting => { // check if there is inventory and then mapping it over painting cards
             //   return <PaintingCard key={painting._id} {...painting} />

@@ -50,3 +50,14 @@ header a {
 .navbar a:hover {
   color: #b9d35e;
 }
+
+/* Painting Card */
+.inventory-delete {
+  color: #e71919;
+}
+.inventory-delete:hover {
+  color: #ffffff;
+  background-color: #f05959;
+  border-color: #ffffff;
+  cursor: pointer;
+}
