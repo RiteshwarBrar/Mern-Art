@@ -1,27 +1,30 @@
-import { useEffect, useState } from "react";
-// import { Button } from "react-bootstrap";
+import { useEffect } from "react";
+import { useInventoryContext } from "../hooks/useInventoryContext";
 import PaintingCard from "../components/PaintingCard";
 import AdditemForm from "../components/AdditemForm";
 
 const Inventory = () => {
     
-    const [inventory, setInventory] = useState([]);
-    const currDate = new Date().toLocaleDateString("en-IN")
+    const {inventory, dispatch} = useInventoryContext();
+
+    // const currDate = new Date().toLocaleDateString("en-IN")
 
     useEffect(() => {
 
       const fetchPaintings = async ()=>{  
-          fetch('/api/paintings'
-          ).then(res => res.json()).then(data => {
-              setInventory(data);
-          }).catch(err => {
-            console.log(err)
-            setInventory([{title: "Error", date: {currDate},description: "There was an error fetching the paintings"}])
-          });
-      }
+          const res = await fetch('/api/paintings')
+          const data = await res.json()
+          if (res.ok) {
+              dispatch({type: 'SET_INVENTORY', payload: data});
+          }
+          else{
+            console.log(data)
+            // setInventory([{title: "Error", date: {currDate},description: "There was an error fetching the paintings"}])//for initial testing
+          }
+      };
 
       fetchPaintings();
-    }, [currDate]);
+    }, [dispatch]);//
 
 
 
@@ -33,11 +36,11 @@ const Inventory = () => {
         <h1>Inventory</h1>
         <AdditemForm/>
         {
-            inventory && inventory.map(painting => { // check if there is inventory and then mapping it over painting cards
+            inventory && inventory.map(painting => ( // check if there is inventory and then mapping it over painting cards
             //   return <PaintingCard key={painting._id} {...painting} />
-            return <PaintingCard key={painting._id} painting={painting} />
+              <PaintingCard key={painting._id} painting={painting} />
             // return <p key={painting._id}>{painting.title}</p>
-            })
+            ))
         }
       </div>
     );

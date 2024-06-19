@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { useInventoryContext } from "../hooks/useInventoryContext";
 
 const AdditemForm = () => {
-
+    const { dispatch } = useInventoryContext();//global context
     const [title, setTitle] = useState('')
     const [date, setDate] = useState('')
     const [description, setDescription] = useState('')
@@ -28,6 +29,7 @@ const AdditemForm = () => {
             setDate('')
             setDescription('')
             console.log('Item added')
+            dispatch({type: 'ADD_ITEM', payload: json})
         }
     }
     return (
