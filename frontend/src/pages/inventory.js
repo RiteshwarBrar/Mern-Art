@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useInventoryContext } from "../hooks/useInventoryContext";
-import PaintingCard from "../components/PaintingCard";
+import InventoryCard from "../components/InventoryCard";
 import AdditemForm from "../components/AdditemForm";
 
 const Inventory = () => {
@@ -38,7 +38,7 @@ const Inventory = () => {
         {
             inventory && inventory.map(painting => ( // check if there is inventory and then mapping it over painting cards
             //   return <PaintingCard key={painting._id} {...painting} />
-              <PaintingCard key={painting._id} painting={painting} />
+              <InventoryCard key={painting._id} painting={painting} />
             // return <p key={painting._id}>{painting.title}</p>
             ))
         }
