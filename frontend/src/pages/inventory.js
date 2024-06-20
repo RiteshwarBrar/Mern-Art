@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useInventoryContext } from "../hooks/useInventoryContext";
 import InventoryCard from "../components/InventoryCard";
-import AdditemForm from "../components/AdditemForm";
+import AdditemForm from "../forms/AdditemForm";
 
 const Inventory = () => {
     
