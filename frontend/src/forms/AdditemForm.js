@@ -1,38 +1,46 @@
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useInventoryContext } from "../hooks/useInventoryContext";
+import { addDoc } from 'firebase/firestore';
 
-const AdditemForm = () => {
+const AdditemForm = ({collectionRef, fetchPaintings}) => {
     const { dispatch } = useInventoryContext();//global context
     const [title, setTitle] = useState('')
     const [date, setDate] = useState('')
     const [description, setDescription] = useState('')
     const [error, setError] = useState(null)
 
+    
+
+    
+
     const handleSubmit = async(e) => {
         e.preventDefault()
-        const response = await fetch('/api/paintings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({title, date, description})
-        })
-        const json = await response.json()
 
-        if (!response.ok) {
-            setError(json.error)
-        }
-        else{
+        
+        try{
+            await addDoc(collectionRef, {
+            Title:title, Date:date, Description:description
+            });
+            
             setError(null)
             setTitle('')
             setDate('')
             setDescription('')
             console.log('Item added')
-            dispatch({type: 'ADD_ITEM', payload: json})
+            // await dispatch({type: 'ADD_ITEM', payload: {Title:title, Date:date, Description:description}})
+            fetchPaintings();
         }
+        
+
+        catch(err) {
+            setError(err)
+        }
+        
+        
     }
-    return (
+    return (<div>
+            {/* <img src={`data:image/png;base64,${encoded}`} alt='uploaded' /> //testing Base64 encoding*/}
             <Form onSubmit={handleSubmit} className='add-item-form'>
                 <Form.Group controlId='formTitle'>
                     <Form.Label>Title</Form.Label>
@@ -44,12 +52,20 @@ const AdditemForm = () => {
                 </Form.Group>
                 <Form.Group controlId='formDescription'>
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type='text' value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <Form.Control type='text' value={description} onChange={(e) => {
+                        setDescription(e.target.value)
+                        }} />
                 </Form.Group>
+                
+                {/* <Form.Group controlId='formUploadImg'>
+                    <Form.Label>Upload Images</Form.Label>
+                    <Form.Control type='file' multiple onChange={(e) => setImgs(e.target.files)} />
+                </Form.Group> */}
                 <Button type='submit'>Add Item</Button>
                 {error && <p className='form-error'>{error}</p>}
-                {console.log(error)}
             </Form>
+
+            </div>
     )
 }
 
