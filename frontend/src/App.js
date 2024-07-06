@@ -6,6 +6,7 @@ import About from './pages/about.js';
 import NotFound from './pages/notfound.js';
 import Inventory from './pages/inventory.js';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 // http://localhost:3000/inventory
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
+      <Footer />
       </BrowserRouter>
     </div>
   );

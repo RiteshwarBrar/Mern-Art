@@ -7,7 +7,7 @@
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: #f4f4f4;
   margin: 0;
   font-family: "Poppins";
 }
@@ -35,7 +35,7 @@ header a {
 .navbar {
   background: #3d3d3d;
   color: #fff;
-  padding: 15px 20px;
+  padding: 2.5% 3%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,8 +43,10 @@ header a {
 
 .navbar a {
   color: #fff;
+  padding: 0px 10px;
   text-decoration: none;
-  margin-right: 10px;
+  font-size: 150%;
+  /* margin-right: 10px; */
 }
 
 .navbar a:hover {
@@ -60,4 +62,76 @@ header a {
   background-color: #f05959;
   border-color: #ffffff;
   cursor: pointer;
+}
+.painting-card-images {
+  margin: 0 auto;
+  width: auto;
+  height: 300px;
+  overflow: hidden;
+}
+.painting-card-image-stack{
+  display: block;
+  justify-content: left;
+  align-items: left;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero a {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.featured-products {
+  padding: 50px;
+  background-color: #fff;
+}
+
+.product-list {
+  display: flex;
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+}
+
+.product-card button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
 }

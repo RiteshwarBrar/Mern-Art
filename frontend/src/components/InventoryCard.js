@@ -34,7 +34,14 @@ const PaintingCard = ({painting, fetchPaintings}) => {
             <h2>{painting.Title}</h2>
             <p>Date: {painting.Date}</p>
             <p>{painting.Description}</p>
-            {/* <img src={`data:image/png;base64,${painting.image}`} alt='uploaded' /> */}
+            {painting.Forsale ? <p>${painting.Price}</p> : <p>Not for sale</p>}
+            {   
+                painting.Images.map((image, index) => (
+                    <div key={index} className='painting-card-image-stack'>
+                    <img className="painting-card-images" key={index} src={image} alt='uploaded'/>
+                    </div>
+                ))
+            }
             <Button onClick={handleDelete} className='inventory-delete'>Delete item</Button>
             {/* //onClick={handleDelete} */}
         </div>

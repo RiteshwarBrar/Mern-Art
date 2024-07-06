@@ -15,6 +15,7 @@ const SignInForm = ({collectionRef, fetchPaintings, setUser}) => {
             await signInWithEmailAndPassword(auth, email, password); 
             console.log('Signed in');
             setUser(auth.currentUser.email);
+            setError(null)
         }
         catch(err) {
             setError(err)
