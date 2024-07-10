@@ -6,12 +6,17 @@ import About from './pages/about.js';
 import NotFound from './pages/notfound.js';
 import Inventory from './pages/inventory.js';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 // http://localhost:3000/inventory
 
 function App() {
   return (
     <div className="App">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
       <BrowserRouter>
         <NavBar/>
         <div className='pages'>
@@ -23,6 +28,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
+      <Footer />
       </BrowserRouter>
     </div>
   );

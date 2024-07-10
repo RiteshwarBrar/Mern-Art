@@ -3,13 +3,14 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 const NavBar = () => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">My Website</Navbar.Brand>
+        <Navbar expand="lg" className="custom-navbar">
+            <Navbar.Brand className="custom-logo" href="/">My Website</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/About">About the Artist</Nav.Link>
-                    <Nav.Link href="/paintings">Artwork</Nav.Link>
+                <Nav className="ml-auto custom-nav">
+                    <Nav.Link href="/" className="custom-nav-link">Home</Nav.Link>
+                    <Nav.Link href="/About" className="custom-nav-link">About the Artist</Nav.Link>
+                    <Nav.Link href="/paintings" className="custom-nav-link">Artwork</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

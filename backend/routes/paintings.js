@@ -26,9 +26,9 @@ router.get('/:id', async(req, res) => {
 
 //POST a new painting   //////////////////////////////////////////
 router.post('/', async(req, res) => {
-    const { title, date, description } = req.body;
+    const { title, date, description, image } = req.body;
     try{
-        const painting = await Painting.create({ title, date, description })
+        const painting = await Painting.create({ title, date, description, image })
         res.status(200).json(painting);
     } catch (error) {
         res.status(400).json({ error: error.message});
