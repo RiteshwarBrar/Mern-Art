@@ -4,6 +4,8 @@ import { collection, getDocs } from "firebase/firestore";
 import { useEffect } from "react";
 import { useInventoryContext } from "../hooks/useInventoryContext";
 import PaintingCard from './paintingCard';
+import { Container, Row, Col } from 'react-bootstrap';
+
 const FeaturedProducts = () => {
 
   const collectionRef = collection(db, 'inventory');
@@ -31,11 +33,18 @@ const FeaturedProducts = () => {
   return (
     <section className="featured-products">
       <h2>Featured Products</h2>
-      <div className="product-list">
-        {inventory && inventory.map(product => (
-          <PaintingCard painting={product}/>
-        ))}
-      </div>
+      <Container >
+        <Row>
+            {inventory && inventory.map(product => (
+              <Col key={product.id} lg="auto">
+                <PaintingCard painting={product}/>
+              </Col>
+            ))}
+            <Col className="d-flex align-items-center" lg="auto">
+              <button className="see-more">See More {'>'}</button>
+            </Col>
+        </Row>
+      </Container>
     </section>
   );
 };

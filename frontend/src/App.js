@@ -13,6 +13,10 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
       <BrowserRouter>
         <NavBar/>
         <div className='pages'>

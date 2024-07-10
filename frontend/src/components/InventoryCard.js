@@ -30,15 +30,15 @@ const PaintingCard = ({painting, fetchPaintings}) => {
 
     // console.log(error)
     return (
-        <div className="painting-card">
+        <div className="inventory-card">
             <h2>{painting.Title}</h2>
             <p>Date: {painting.Date}</p>
             <p>{painting.Description}</p>
             {painting.Forsale ? <p>${painting.Price}</p> : <p>Not for sale</p>}
             {   
                 painting.Images.map((image, index) => (
-                    <div key={index} className='painting-card-image-stack'>
-                    <img className="painting-card-images" key={index} src={image} alt='uploaded'/>
+                    <div key={index} className='inventory-card-image'>
+                    <img fill key={index} src={image} alt='uploaded'/>
                     </div>
                 ))
             }

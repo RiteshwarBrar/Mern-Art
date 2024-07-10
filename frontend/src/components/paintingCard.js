@@ -1,5 +1,4 @@
 
-
 const PaintingCard = ({painting}) => {
 
     
@@ -9,15 +8,16 @@ const PaintingCard = ({painting}) => {
             <h3>{painting.Title}</h3>
             {/* <p>Date: {painting.Date}</p> */}
             {/* <p>{painting.Description}</p> */}
-            {painting.Forsale ? <p>${painting.Price}</p> : <p>Sold</p>}
-            {/* {   
+            
+            {   
                 painting.Images.map((image, index) => (
-                    <div key={index} className='painting-card-image-stack'>
-                    <img className="painting-card-images" key={index} src={image} alt='uploaded'/>
-                    </div>
+                    
+                    <img className="painting-card-images" width="200"  height="200" src={image} alt='uploaded'/>
+                    
                 ))
-            } */}
-            <button>See More</button>
+            }
+            {painting.Forsale ? <p>${painting.Price}</p> : <p>Sold</p>}
+            {/* <button className="see-more">See More</button> */}
         </div>
     );
 };
