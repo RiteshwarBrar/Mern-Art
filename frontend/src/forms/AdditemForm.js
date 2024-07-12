@@ -11,8 +11,10 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
     const [description, setDescription] = useState('')
     const [error, setError] = useState(null)
     const [images, setImgs] = useState(null)
-    const [price, setPrice] = useState(null)
-    const [sold, setSold] = useState(false)
+    const [price, setPrice] = useState('')
+    const [forSale, setForSale] = useState(false)
+    const [size, setSize] = useState('')
+    const [medium, setMedium] = useState('')
     const imgs = []
 
     const handleSubmit = async(e) => {
@@ -35,7 +37,7 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
             
             // console.log(imgs);
             await addDoc(collectionRef, {
-            Title:title, Date:date, Description:description, Images:imgs, Forsale:!sold, Price:price
+            Title:title, Date:date, Description:description, Images:imgs, Forsale:forSale, Price:price, Size:size, Medium:medium
             });
             
             setError(null)
@@ -43,8 +45,10 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
             setDate('')
             setDescription('')
             setImgs(null)
-            setSold(false)
-            setPrice(null)
+            setForSale(false)
+            setPrice('')
+            setSize('')
+            setMedium('')
             imgs.length=0;
             console.log('Item added')
             // await dispatch({type: 'ADD_ITEM', payload: {Title:title, Date:date, Description:description}})
@@ -104,18 +108,30 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
                     <Form.Label>Price</Form.Label>
                     <Form.Control type='text' value={price} onChange={(e) => setPrice(e.target.value)} />
                 </Form.Group>
+                <Form.Group controlId='formSize'>
+                    <Form.Label>Size{" (dimensions)"}</Form.Label>
+                    <Form.Control type='text' value={size} onChange={(e) => setSize(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId='formMedium'>
+                    <Form.Label>Medium</Form.Label>
+                    <Form.Control type='text' value={medium} onChange={(e) => setMedium(e.target.value)} />
+                </Form.Group>
                 <Form.Group controlId='formDescription'>
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type='text' value={description} onChange={(e) => {
-                        setDescription(e.target.value)
-                        }} />
+                    <Form.Control 
+                        as="textarea"
+                        rows={10}
+                        value={description}
+                        onChange={(e) => {
+                            setDescription(e.target.value)
+                        }}/>
                 </Form.Group>
                 <Form.Group controlId='formUploadImg'>
                     <Form.Label>Upload Images</Form.Label>
                     <Form.Control type='file' multiple onChange={(e) => setImgs(e.target.files)} />
                 </Form.Group>
                 <Form.Group controlId='formSold'>
-                    <Form.Check type='checkbox' label='Sold' onChange={(e) => setSold(e.target.checked)} />
+                    <Form.Check type='checkbox' label='For Sale' onChange={(e) => setForSale(e.target.checked)} />
                 </Form.Group>
                 {/* <Form.Group controlId='formUploadImg'>
                     <Form.Label>Upload Images</Form.Label>

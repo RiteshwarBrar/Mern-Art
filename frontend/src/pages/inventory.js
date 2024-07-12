@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button} from 'react-bootstrap';
 import { useInventoryContext } from "../hooks/useInventoryContext";
-import InventoryCard from "../components/InventoryCard";
+import InventoryCard from "../components/inventory/InventoryCard";
 import AdditemForm from "../forms/AdditemForm";
 import { db, auth } from "../firebase";
 import { signOut } from 'firebase/auth';

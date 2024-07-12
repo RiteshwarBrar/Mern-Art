@@ -1,9 +1,9 @@
 import React from 'react';
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect } from "react";
-import { useInventoryContext } from "../hooks/useInventoryContext";
-import PaintingCard from './paintingCard';
+import { useInventoryContext } from "../../hooks/useInventoryContext";
+import PreviewCard from './previewCard';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const FeaturedProducts = () => {
@@ -37,7 +37,7 @@ const FeaturedProducts = () => {
         <Row>
             {inventory && inventory.map(product => (
               <Col key={product.id} lg="auto">
-                <PaintingCard painting={product}/>
+                <PreviewCard painting={product}/>
               </Col>
             ))}
             <Col className="d-flex align-items-center" lg="auto">

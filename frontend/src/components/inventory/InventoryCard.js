@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import { Button } from 'react-bootstrap';
-import { useInventoryContext } from "../hooks/useInventoryContext";
+import { useInventoryContext } from "../../hooks/useInventoryContext";
 import { deleteDoc, doc } from 'firebase/firestore';
-import { db } from "../firebase";
+import { db } from "../../firebase";
 const PaintingCard = ({painting, fetchPaintings}) => {
 
     const { dispatch } = useInventoryContext();
@@ -33,6 +33,8 @@ const PaintingCard = ({painting, fetchPaintings}) => {
         <div className="inventory-card">
             <h2>{painting.Title}</h2>
             <p>Date: {painting.Date}</p>
+            <p>Medium: {painting.Medium}</p>
+            <p>Size: {painting.Size}</p>
             <p>{painting.Description}</p>
             {painting.Forsale ? <p>${painting.Price}</p> : <p>Not for sale</p>}
             {   

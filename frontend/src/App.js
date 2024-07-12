@@ -5,7 +5,7 @@ import Paintings from './pages/paintings.js';
 import About from './pages/about.js';
 import NotFound from './pages/notfound.js';
 import Inventory from './pages/inventory.js';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar.js';
 import Footer from './components/Footer';
 
 // http://localhost:3000/inventory
