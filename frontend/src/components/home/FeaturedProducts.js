@@ -27,6 +27,7 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     fetchPaintings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);//
 
 
