@@ -29,6 +29,7 @@ const Paintings = () => {
   
     useEffect(() => {
       fetchPaintings();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch]);
 
     //pagination
