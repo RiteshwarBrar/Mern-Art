@@ -1,6 +1,55 @@
+/*
+  suggested color scheme:
+  Dark Blue: #1d262e
+  Light Blue: #d9e5ec
+  Light Grey: #e8e7ea
+  Deep Red: #9e222c
+
+*/
+
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
+@font-face{
+  font-family: 'Avenir';
+  src: url('./assets/fonts/Avenir-Light.ttf');
+}
+@font-face{
+  font-family: 'Avenir';
+  src: url('./assets/fonts/Avenir-Oblique.otf');
+  font-style: italic;
+}
+@font-face{
+  font-family: 'Avenir';
+  src: url('./assets/fonts/Avenir-Heavy.otf');
+  font-weight: 300;
+}
+@font-face{
+  font-family: 'Avenir';
+  src: url('./assets/fonts/Avenir-Medium.otf');
+  font-weight: 200;
+}
+@font-face{
+  font-family: 'Avenir';
+  src: url('./assets/fonts/Avenir-MediumOblique.otf');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face{
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Regular.ttf');
+}
+@font-face{
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Bold-Italic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face{
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Medium.ttf');
+  font-weight: 200;
+}
 /* layout */
 :root {
   --primary: #1aac83;
@@ -9,181 +58,191 @@
 body {
   background: #f4f4f4;
   margin: 0;
-  font-family: "Poppins";
   color:#fff;
 }
-/* header {
-  background: #fff;
-}
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-header a {
-  color: #333;
-  text-decoration: none; */
-/* } */
 .App {
   /* display: flex;
   flex-direction: column; */
-  background-color: #e8e7ea;
+  background-color: #ffffff;
+  font-family: "Avenir";
 }
 .pages{
-  max-width: 1400px;
-  padding: 20px;
+  max-width:fill; /* initially 1400px */
+  padding: auto 20px;
   margin: 0 auto;
 }
 /* //////////////////// Navbar   ////////////////// */
-.custom-navbar {
-  background-color: #8ca2af;  /* Dark background color */
+.navbar {
+  background-color: #d9e5ec;  /* Dark background color */
   /* padding: 10px 10px;      Padding for spacing */
-  color: #fff;
+  
 }
 
 .custom-navbar .custom-logo {
-  color: #ffffff !important;             /* White text color for logo */
+  color: #ffffff;             /* White text color for logo */
   font-size: 1.75rem;      /* Larger font size for logo */
   /* font-weight: bold;       Bold font weight */
   margin-left: 3rem;
 }
 
-.custom-navbar .custom-nav .custom-nav-link {
-  color: #9e222c !important;             /* White text color for nav links */
+.navbar .container-fluid .collapse {
+  color:#1d262e;             /* White text color for nav links */
   margin-right: 4rem;     /* Spacing between links */
   font-size: 1.5rem;      /* Larger font size for nav links */
   
 }
 
-.custom-navbar .custom-nav .custom-nav-link:hover {
-  color: #1d262e !important;          /* Light red color on hover */
-}
-/* .navbar {
-  background: #3d3d3d;
-  color: #fff;
-  padding: 2.5% 3%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar .container-fluid .collapse:hover {
+  color:#9e222c;         /* Light red color on hover */
+  text-decoration: none;  /* Remove underline on hover */
 }
 
-.custom-nav .navbar-links {
-  color: #d3d3d3;
-  padding: 0px 10px;
-  text-decoration: none;
-  /* font-size: 150%; */
-  /* margin-right: 10px; */
-/* }
-.navbar-logo{
-  color: #fff;
-} */
-
-
-
-
-
-
-
-
-/* .painting-card-images {
-  margin: 0 auto;
-  width: auto;
-  height: 300px;
-  overflow: hidden;
-}
-.painting-card-image-stack{
-  display: block;
-  justify-content: left;
-  align-items: left;
-} */
-/* .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #333;
-  color: rgb(255, 255, 255); */
-/* } */
-
-.hero {
+.footer {
   text-align: center;
-  margin-top: 2rem;
   padding: 20px;
-  background-color: #e8e7ea;
-  border-radius: 18px;  
+  background-color: #d9e5ec;
+  color: #1d262e;
+}
+
+/* //////////////////// Home Page ////////////////// */
+/* //////// Hero Section //////// */
+.hero {
+  width: 100%;
+  height: auto;
+  color: #ffffff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  /* padding: 20px; */
+  background-image: url('./assets/images/backdrop.png');
+  background-size: cover;
+  background-position: center;
+}
+.hero .box {
+  background-color: #9694946c;
+  padding: 4% 1%;
+  border: 1px solid #ffffff;
+  margin: 25% auto;
+  width: 100%;
+  /* opacity: 0.1; */
 }
 /*f8fbfd*/
 .hero h1 {
-  font-size: 2.5em;
-  color: #1d262e;
+  font-size: 3.2em;
+  font-weight: 300;
+}
+.hero p {
+  font-size: 1.2em;
+  margin: 15px auto 25px;
+  font-weight: 200;
 }
 .hero .shop-now {
+  color: #ffffff;
   text-align: center;
-  padding: 8px 20px 10px 20px;
+  padding: 10px 50px;
   font-size: 1em;
-  background-color: #1d262e;
-  color: #e8e7ea;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 8px;
+  border: #ffffff solid 2px;
+  border-radius: 0px;
+  font-style: italic;
+  font-weight: 200;
 }
 .hero .shop-now:hover {
   text-align: center;
   font-size: 1em;
-  background-color: #354452;
-  color: #e8e7ea;
+  background-color: #ffffff;
+  color: #1d262e;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 8px;
 }
 
-.hero p {
-  font-size: 1em;
-  color: #1d262e;
-}
-
+/* //////// featured/Top Picks //////// */
 .featured-products {
   color: #1d262e;
   text-align: center;
   margin-top: 2rem;
-  padding: 50px;
-  background-color: #f8fbfd;
+  padding: 5%;
   border-radius: 18px;  
 }
 
+.featured-products .featured-products-heading{
+  font-size: 2.2em;
+  font-weight: 200;
+}
+.featured-products .featured-products-line{
+  border-top: 2px solid #1d262e;
+  width: 3.2%;
+}
 .featured-products .see-more {
+  font-style: italic;
   text-align: center;
-  padding: 8px 20px 10px 20px;
+  padding: 10px 60px;
   font-size: 1em;
-  background-color: #1d262e;
-  color:#e8e7ea;
+  background-color: transparent;
+  color:#9e222c;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 8px;
+  border: #9e222c solid 2px;
 }
 .featured-products .see-more:hover {
-  text-align: center;
-  padding: 8px 20px 10px 20px;
-  font-size: 1em;
-  background-color: #354452;
-  color: #e8e7ea;
-  border: none;
+  background-color: #9e222c;
+  color: #ffffff;
   cursor: pointer;
-  text-decoration: none;
-  border-radius: 8px;
 }
-/*             about me       */
+/*/////////////////// Product Card /////////////////*/
+.preview-product-card {
+  margin: auto auto 40px;
+}
+.preview-product-image-card {
+  /* border: 5px solid #ffffff; */
+  display: grid;
+  align-items: center; /* Vertically center */
+  justify-content: center;
+  text-align: center;
+  background-color: #f3f2f2;
+  width: 350px;
+  height: 400px;
+  margin: 20px auto 30px; 
+  /* padding: 20px auto 30px; */
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px #85091341;
+}
+.preview-product-card  .Title {
+  margin: auto;
+  font-size: 1.6em; 
+}
+.preview-product-card  p {
+  /* font-family: 'Didot';
+  font-weight: bold; */
+  font-style: italic;
+  color:#9e222c;
+  font-size: 1em;
+}
+.painting-card-images {
+  width: auto;
+  height: 240px;
+  width: 320px;
+  /* overflow: hidden;
+  border-radius: 10px; */
+}
+
+
+
+
+
+
+
+/* //////// About me preview Section //////// */
 .about-me {
   text-align: center;
   margin-top: 2rem;
   padding: 50px;
-  background-color: #e8e7ea;
   border-radius: 18px;  
 }
 .Aboutme-quote{
@@ -237,29 +296,7 @@ header a {
   gap: 20px;
 } */
 
-.preview-product-card {
-  /* border: 5px solid #ffffff; */
-  display: grid;
-  align-items: center; /* Vertically center */
-  justify-content: center;
-  text-align: center;
-  background-color: #e8e7ea;
-  width: 350px;
-  height: 400px;
-  margin: 20px auto 30px; 
-  /* padding: 20px auto 30px; */
-  border-radius: 10px;
-}
-.preview-product-card  .Title {
-  margin: 20px auto 0px; 
-}
-.painting-card-images {
-  width: auto;
-  height: 240px;
-  width: 320px;
-  /* overflow: hidden;
-  border-radius: 10px; */
-}
+
 /* width="320"  height="240" */
 /* Inventory Card */
 .inventory-delete {
@@ -291,9 +328,3 @@ header a {
     position: absolute;
 }
 
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #8ca2af;
-  color: #9e222c;
-}
