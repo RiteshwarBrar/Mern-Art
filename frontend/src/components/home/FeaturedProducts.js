@@ -38,10 +38,19 @@ const FeaturedProducts = () => {
       <hr className="featured-products-line"/>
       <Container className='featured-products-container'>
         <Row>
-            {inventory && inventory.map(product => (
-              <Col key={product.id} lg="auto">
-                <PreviewCard painting={product}/>
-              </Col>
+            {inventory && inventory
+                .filter(product => product.Featured && product.Orientation === "Portrait")
+                .map(product => (
+                  <Col key={product.id} >
+                    <PreviewCard painting={product}/>
+                  </Col>
+            ))}
+            {inventory && inventory
+                .filter(product => product.Featured && product.Orientation === "Landscape")
+                .map(product => (
+                  <Col key={product.id} >
+                    <PreviewCard painting={product}/>
+                  </Col>
             ))}
         </Row>
       </Container>
