@@ -575,9 +575,11 @@ body {
     margin: 0 5%;
    }
   .hero .box {
+    margin: 0% auto;
     backdrop-filter: blur(20px);
     padding: 7% 1%;
-    width: 80%;
+    width: 90%;
+    font-size: 0.9em;
   }
   .preview-product-image-card{
     max-width: 330px;
@@ -617,9 +619,9 @@ body {
     border-radius: 50px;
     width: 85%;
   }
-  .Shop .shop-icons {
-    margin-bottom: 15px;
-    /* opacity: 0.1; */
+
+  .Shop img {
+    margin: 20px 30px 15px;
   }
 }
 /* @media (max-width: 992px) {
