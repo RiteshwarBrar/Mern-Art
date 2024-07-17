@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect } from "react";
@@ -33,19 +34,27 @@ const FeaturedProducts = () => {
 
   return (
     <section className="featured-products">
-      <h2>Featured Products</h2>
-      <Container >
+      <h2 className="featured-products-heading">OUR TOP PICKS</h2>
+      <hr className="featured-products-line"/>
+      <Container className='featured-products-container'>
         <Row>
-            {inventory && inventory.map(product => (
-              <Col key={product.id} lg="auto">
-                <PreviewCard painting={product}/>
-              </Col>
+            {inventory && inventory
+                .filter(product => product.Featured && product.Orientation === "Portrait")
+                .map(product => (
+                  <Col key={product.id} >
+                    <PreviewCard painting={product}/>
+                  </Col>
             ))}
-            <Col className="d-flex align-items-center" lg="auto">
-              <button className="see-more">See More {'>'}</button>
-            </Col>
+            {inventory && inventory
+                .filter(product => product.Featured && product.Orientation === "Landscape")
+                .map(product => (
+                  <Col key={product.id} >
+                    <PreviewCard painting={product}/>
+                  </Col>
+            ))}
         </Row>
       </Container>
+      <Link to="/paintings" className="see-more">Browse The Collection</Link>
     </section>
   );
 };

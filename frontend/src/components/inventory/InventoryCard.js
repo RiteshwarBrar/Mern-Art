@@ -37,10 +37,18 @@ const PaintingCard = ({painting, fetchPaintings}) => {
             <p>Medium: {painting.Medium}</p>
             <p>Size: {painting.Size}</p>
             <p>{painting.Description}</p>
-            {painting.Forsale ? <p>${painting.Price}</p> : <p>Not for sale</p>}
+            {painting.Forsale ? <p>Rs.{painting.Price}</p> : <p>Not for sale</p>}
             {   
                 painting.Images.map((image, index) => (
-                    <div key={index} className='inventory-card-image'>
+                    <div 
+                        key={index} 
+                        className='inventory-card-image'
+                        style={painting.Orientation==="Square"?
+                        { width: '500px',height: '500px'}//if orientation is square then width and height are same
+                        :painting.Orientation==="Landscape"?
+                        { width: '500px',height: '400px'}//if orientation is landscape then width and height are same
+                        :{ width: '400px',height: '500px'}//if orientation is portrait then width and height are same
+                        }>
                     <img fill key={index} src={image} alt='uploaded'/>
                     </div>
                 ))

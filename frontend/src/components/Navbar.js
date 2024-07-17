@@ -1,21 +1,37 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import logo from '../assets/logo.svg';
+import logo from '../assets/svgs/logo.svg';
+import { NavLink } from 'react-router-dom';
 const NavBar = () => {
     return (
-        <Navbar expand="lg" className="custom-navbar">
-            <Navbar.Brand className="custom-logo" href="/">
-                <img src={logo} alt="Logo" />
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto custom-nav">
-                    <Nav.Link href="/" className="custom-nav-link">Home</Nav.Link>
-                    {/* <Nav.Link href="/About" className="custom-nav-link">About the Artist</Nav.Link> */}
-                    <Nav.Link href="/paintings" className="custom-nav-link">Artwork</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+        <div>
+            <nav className="navbar">
+                <div className="container">
+                    <NavLink to="/">
+                        <img className="customlogo" src={logo} alt="Logo" />
+                    </NavLink>
+
+                        <ul className="navlinks-list">
+                            <li className="navitem">
+                                <NavLink to="/" className="navlink">Home</NavLink>
+                            </li>
+                            <li className="navitem">
+                                <p>|</p>
+                            </li>
+                            <li className="navitem">
+                                <NavLink to="/paintings" className="navlink">Artwork</NavLink>
+                            </li>
+                            <li className="navitem">
+                                <p>|</p>
+                            </li>
+                            <li className="navitem">
+                                <NavLink to="/shop" className="navlink">Shop</NavLink>
+                            </li>
+                        </ul>
+                    
+                    
+                </div>
+            </nav>
+        </div>
     );
 };
 

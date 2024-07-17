@@ -15,6 +15,7 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
     const [forSale, setForSale] = useState(false)
     const [size, setSize] = useState('')
     const [medium, setMedium] = useState('')
+    const [imageType, setImageType] = useState('Portrait')
     const imgs = []
 
     const handleSubmit = async(e) => {
@@ -37,7 +38,7 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
             
             // console.log(imgs);
             await addDoc(collectionRef, {
-            Title:title, Date:date, Description:description, Images:imgs, Forsale:forSale, Price:price, Size:size, Medium:medium
+            Title:title, Date:date, Description:description, Images:imgs, Forsale:forSale, Price:price, Size:size, Medium:medium, Orientation:imageType
             });
             
             setError(null)
@@ -49,6 +50,7 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
             setPrice('')
             setSize('')
             setMedium('')
+            setImageType('Portrait')
             imgs.length=0;
             console.log('Item added')
             // await dispatch({type: 'ADD_ITEM', payload: {Title:title, Date:date, Description:description}})
@@ -104,10 +106,15 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
                     <Form.Label>Date</Form.Label>
                     <Form.Control type='text' value={date} onChange={(e) => setDate(e.target.value)} />
                 </Form.Group>
-                <Form.Group controlId='formDate'>
+                <Form.Group controlId='formPrice'>
                     <Form.Label>Price</Form.Label>
                     <Form.Control type='text' value={price} onChange={(e) => setPrice(e.target.value)} />
                 </Form.Group>
+                <div>-</div>
+                <Form.Group controlId='formSold'>
+                    <Form.Check type='checkbox' label='For Sale' onChange={(e) => setForSale(e.target.checked)} />
+                </Form.Group>
+                <div>-</div>
                 <Form.Group controlId='formSize'>
                     <Form.Label>Size{" (dimensions)"}</Form.Label>
                     <Form.Control type='text' value={size} onChange={(e) => setSize(e.target.value)} />
@@ -126,19 +133,31 @@ const AdditemForm = ({collectionRef, fetchPaintings}) => {
                             setDescription(e.target.value)
                         }}/>
                 </Form.Group>
+                <div>-</div>
                 <Form.Group controlId='formUploadImg'>
                     <Form.Label>Upload Images</Form.Label>
                     <Form.Control type='file' multiple onChange={(e) => setImgs(e.target.files)} />
                 </Form.Group>
-                <Form.Group controlId='formSold'>
-                    <Form.Check type='checkbox' label='For Sale' onChange={(e) => setForSale(e.target.checked)} />
+                <div>-</div>
+                <Form.Group controlId='formImageType'>
+                <Form.Label>Image Type</Form.Label>
+                    <Form.Control 
+                        as='select' 
+                        value={imageType} 
+                        onChange={(e) => setImageType(e.target.value)}>
+                        <option value='Portrait'>Portrait</option>
+                        <option value='Landscape'>Landscape</option>
+                        <option value='Square'>Square</option>
+                    </Form.Control>
                 </Form.Group>
+                <div>-</div>
                 {/* <Form.Group controlId='formUploadImg'>
                     <Form.Label>Upload Images</Form.Label>
                     <Form.Control type='file' multiple onChange={(e) => setImgs(e.target.files)} />
                 </Form.Group> */}
                 <Button type='submit'>Add Item</Button>
                 {error && <p className='form-error'>{error}</p>}
+                <div>-</div>
             </Form>
             </div>
     )
