@@ -24,7 +24,7 @@ const NavBar = () => {
                                 <p>|</p>
                             </li>
                             <li className="navitem">
-                                <NavLink to="/inventory" className="navlink">Shop</NavLink>
+                                <NavLink to="/shop" className="navlink">Shop</NavLink>
                             </li>
                         </ul>
                     
