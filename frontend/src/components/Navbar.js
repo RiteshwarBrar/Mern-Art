@@ -9,7 +9,6 @@ const NavBar = () => {
                     <NavLink to="/">
                         <img className="customlogo" src={logo} alt="Logo" />
                     </NavLink>
-
                         <ul className="navlinks-list">
                             <li className="navitem">
                                 <NavLink to="/" className="navlink">Home</NavLink>
@@ -25,6 +24,12 @@ const NavBar = () => {
                             </li>
                             <li className="navitem">
                                 <NavLink to="/shop" className="navlink">Shop</NavLink>
+                            </li>
+                            <li className="navitem">
+                                <p>|</p>
+                            </li>
+                            <li className="navitem">
+                                <NavLink to="/checkout" className="navlink">Checkout</NavLink>
                             </li>
                         </ul>
                     

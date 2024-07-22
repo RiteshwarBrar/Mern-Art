@@ -110,7 +110,7 @@ body {
 }
 
 .navitem {
-  margin: 0 25%; /* Adjust the spacing between navigation links */
+  margin: 0 20%; /* Adjust the spacing between navigation links */
   text-decoration: none; /* Remove underline from links */
   font-size: 1.8rem;
   color:#1d262e; 

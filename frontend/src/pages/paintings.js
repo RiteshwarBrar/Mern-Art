@@ -17,7 +17,7 @@ const Paintings = () => {
       try{
         const res = await getDocs(collectionRef);
         const data = res.docs.map((doc) => ({...doc.data(),id: doc.id}));//mapping over the data and adding id to it
-        console.log(data);
+        // console.log(data);
         dispatch({type: 'SET_INVENTORY', payload: data});
       }
       catch(error){
@@ -28,6 +28,7 @@ const Paintings = () => {
   
     useEffect(() => {
       fetchPaintings();
+      // console.log(inventory);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch]);
 
@@ -51,8 +52,8 @@ const Paintings = () => {
         
         
           {currentPageProducts?.map((product,index) => (
-            <Row className="d-flex justify-content-center align-items-center">
-              <ProductCard key={index} product={product} index={index}/>
+            <Row key={product.id} className="d-flex justify-content-center align-items-center">
+              <ProductCard key={product.id} product={product} index={index}/>
             </Row>
           ))}
         <ReactPaginate

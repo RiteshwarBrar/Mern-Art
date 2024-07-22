@@ -1,4 +1,3 @@
-import React from "react";
 import emailicon from '../assets/svgs/emailbk.svg';
 import instaIcon from '../assets/svgs/instabk.svg';
 const About = () => {

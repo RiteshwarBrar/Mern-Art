@@ -6,6 +6,7 @@ import Paintings from './pages/paintings.js';
 import Shop from './pages/shop.js';
 import NotFound from './pages/notfound.js';
 import Inventory from './pages/inventory.js';
+import Cart from './pages/cart.js';
 import NavBar from './components/Navbar.js';
 import Footer from './components/Footer';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='/paintings' element={<Paintings />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/inventory' element={<Inventory />} /> 
+            <Route path='/checkout' element={<Cart />} /> 
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
