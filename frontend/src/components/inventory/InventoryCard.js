@@ -37,7 +37,7 @@ const PaintingCard = ({painting, fetchPaintings}) => {
             <p>Medium: {painting.Medium}</p>
             <p>Size: {painting.Size}</p>
             <p>{painting.Description}</p>
-            {painting.Forsale ? <p>Rs.{painting.Price}</p> : <p>Not for sale</p>}
+            {painting.Forsale ? <p>${painting.Price}</p> : <p>Not for sale</p>}
             {   
                 painting.Images.map((image, index) => (
                     <div 

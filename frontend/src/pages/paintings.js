@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useInventoryContext } from "../hooks/useInventoryContext";
 import ReactPaginate from 'react-paginate';
 import { Row } from 'react-bootstrap';
+import CustomBanner from '../components/home/CustomBanner';
 const Paintings = () => {
 
     const collectionRef = collection(db, 'inventory');
@@ -68,7 +69,10 @@ const Paintings = () => {
           containerClassName={'pagination'}
           activeClassName={'active'}
         />
+        
       </div>
+      
+      <CustomBanner />
     </div>
     );
   };

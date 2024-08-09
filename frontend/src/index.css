@@ -75,7 +75,7 @@ body {
 /* //////////////////// Navbar   ////////////////// */
 .navbar {
   background-color: #fefefe;
-  background-image: linear-gradient(to bottom, #fefefe 60%, #fce7df );
+  background-image: linear-gradient(to bottom, #fefefe 60%, #ffe7e9 );
   /* padding: 10px 10px;      Padding for spacing */
   display: flex;
   /* justify-content: center; */
@@ -131,8 +131,9 @@ body {
 }
 
 /* //////////////////// Footer ////////////////// */
+/* //f8e4dc */
 .footer {
-  background-color: #f8e4dc;
+  background-color: #ffe7e9; 
   padding: 20px 0;
   text-align: left;
 }
@@ -158,6 +159,11 @@ body {
 
 .footer-icons img {
   width: 50px; /* Adjust size of icons as needed */
+  max-height: 50px;
+}
+.footer-icons img:hover {
+  background-color: #f00f0f1c;
+  border-radius: 25%;
 }
 /* //////////////////// Home Page ////////////////// */
 /* //////// Hero Section //////// */
@@ -299,6 +305,8 @@ body {
   font-style: italic;
   color:#9e222c;
   font-size: 1em;
+  margin-bottom: 0px;
+  margin-top: 2px;
 }
 
 /* //////// About me preview Section //////// */
@@ -331,7 +339,7 @@ body {
   /* text-decoration: none; */
   width: 100%;
   padding: 20px 0px 100px;
-  background-image: linear-gradient(to bottom, #ffffff 5%, #f7f2f0 );
+  background-image: linear-gradient(to bottom, #ffffff , #fff6f7 );
 }
 .Follow .insta{
   text-decoration: none;
@@ -339,15 +347,19 @@ body {
 }
 /*//////////////////////// Product Page ////////////////////////*/
 .products-page {
+  background-image: linear-gradient(to bottom, #ffffff, #fff6f7);
   color: #1d262e;
   text-align: center;
-  padding: 4%;
+  padding: 5% 10%;
+  justify-items: center;
+  align-items: center;
 }
 .products-page .products-page-container {
-  /* display: block;
+  display: block;
   justify-content: center;
-  align-items: center; */
-  display: inline-grid;;
+  align-items: center;
+  /* display: inline-grid; */
+  /* background-color: #000000; */
 }
 .products-page .products-page-heading{
   font-size: 2.8em;
@@ -395,13 +407,71 @@ body {
   margin: 10px auto;
   max-width: 80%;
 }
+.product-card button{
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background-color: #9e222c;
+  color: white;
+  border-radius: 10px;
+}
+.product-card button:hover{
+  background-color: #ff7d8e67;
+  color: #9e222c;
+  border-radius: 10px;
+}
+
+/* CustomOrderBanner.css */
+
+.custom-order-banner {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fdfdfd;
+  border: #9e222c1a 5px solid;
+  backdrop-filter: blur(20px);
+  padding: 5% 100px;
+  margin: 5% auto 0;
+}
+
+.custom-order-banner h2 {
+  font-weight: 200;
+  color: #9e222c;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.custom-order-banner p {
+  font-style: italic;
+  color:#1d262e;
+  font-size: 1.4em;
+  margin-bottom: 10px auto;
+}
+
+.custom-order-button {
+  background-color: #9e222c;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.custom-order-button:hover {
+  background-color: #ff7d8e67;
+  color: #9e222c;
+}
+
 /* //////////////////// Pagination ////////////////// */
 /* Pagination container */
 .pagination {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 0;
+  margin-top: 30px;
 }
 
 /* Pagination links */
@@ -411,10 +481,8 @@ body {
   color: #fdeff0 !important;
   padding: 10px 15px;
   margin: 0 5px;
-  border: 1px solid #9e222c;
   transition: background-color 0.3s;
   background-color: #9e222c;
-  
   border-radius: 10px;
 }
 
@@ -429,7 +497,7 @@ body {
 /* Hover effect */
 .pagination a:hover {
   background-color: #ff7d8e67;
-  color: #9e222c;
+  color: #9e222c !important;
   text-decoration: none;
 }
 
@@ -514,7 +582,218 @@ body {
   border-radius: 25%;
 }
 
-
+/*//////////////////////// Checkout Page ////////////////////////*/
+.Checkout-page {
+  color: #1d262e;
+  text-align: center;
+  padding: 4% 10%;
+  max-width: 100%;
+}
+.Checkout-page .Checkout-page-container {
+  justify-content: center;
+  align-items: center;
+}
+.Checkout-page .Checkout-page-heading{
+  font-size: 2.8em;
+  font-weight: 200;
+}
+.Checkout-page .Checkout-page-line{
+  border-top: 2px solid #1d262e;
+  width: 3.2%;
+  padding-bottom: 1%;
+}
+/*  Product Card */
+.Checkout-card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px 20px 20px;
+  margin: 20px;
+  justify-content: center;
+  border: 1px solid #ddd;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* min-width: 90%; */
+  /* padding: 0 50px; */
+  width: 100%;
+}
+.Checkout-page .Checkout-page-image {
+  margin: 10px auto 25px;
+  max-width: 100%;
+}
+.Checkout-page .shop-now {
+  color: #ddd;
+  font-weight: 200;
+  text-align: center;
+  padding: 10px 50px;
+  margin-top: 0px;
+  font-size: 1em;
+  background-color: #9e222c;
+  cursor: pointer;
+  text-decoration: none;
+  border: #ddd solid 2px;
+  font-style: italic;
+  font-weight: 200;
+}
+.Checkout-page .shop-now:hover {
+  color: #9e222c;  
+  background-color: #ddd;
+  border: #9e222c solid 2px;
+}
+.Checkout-page .Checkout-page-paragraph{
+  color:#1d262e;
+  font-size: 1.4em;
+  margin: 20px auto 15px;
+  max-width: 80%;
+}
+.Checkout-card-image-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-shrink: 0; Prevent the image box from shrinking */
+  margin: 20px 10px;
+  padding-top: 100%;
+  overflow: hidden; 
+  max-width: 90%;
+}
+.Checkout-card-image-box img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 90%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+.Checkout-card-image {
+  /* margin: 20px auto;*/
+  aspect-ratio: 8/9; /* Maintain aspect ratio */
+  max-width: 100%;
+  border-radius: 10px;
+}
+.Checkout-card-description {
+  /* background-color: #e7c6c6; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* max-width: 90%; */
+  /* flex: 1; */
+  /* width: 300px; */
+  /* max-width: 90%; */
+}
+.Checkout-card  .Title {
+  /* margin: 0; */
+  font-size: 1.8em; 
+  font-weight: 200;
+}
+.Checkout-card  p {
+  font-style: italic;
+  color:#1d262e;
+  font-size: 0.9em;
+  margin: 2px auto;
+  /* max-width: 80%; */
+}
+.Checkout-card  .red {
+  font-style: italic;
+  color:#9e222c;
+  font-size: 1em;
+  margin: 5px auto;
+  /* max-width: 80%; */
+}
+.Checkout-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+.checkout-button{
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background-color: #9e222c;
+  color: white;
+}
+.Checkout-Form-Heading{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.Checkout-Form-Heading h2 {
+  font-size: 1.5em;
+  width: 100%;
+}
+.Checkout-Form-Heading .shipping{
+  /* border-right: #1d262e 1px solid; */
+  background-color: #f0f0f0;
+  border-right: none;
+  border-radius: 15px 0 0 15px;
+  padding: 10px 5px 10px;
+}
+.Checkout-Form-Heading .shipping.active{
+  color: #9e222c; /* Active text color */
+  border-right: #9e222c 1px solid;
+  background-color: #ffe7e9;
+  font-weight: 200;
+}
+.Checkout-Form-Heading .payment{
+  /* border: #1d262e 1px solid; */
+  border-left: #1d262e 1px solid;
+  background-color: #f0f0f0;
+  border-left: none;
+  border-radius: 0 15px 15px 0;
+  padding: 10px 5px 10px;
+}
+.Checkout-Form-Heading .payment.active{
+  color: #9e222c;
+  border-left: #9e222c 1px solid;
+  background-color: #ffe7e9;
+  font-weight: 200;
+}
+.checkout-total{
+  font-weight: 200;
+  margin: 10px auto;
+  width: 95%;
+}
+.Checkout-card .remove-from-cart {
+  background-color: #9e222c;
+  color: white;
+  border-radius: 15px;
+}
+.Checkout-card .remove-from-cart:disabled {
+  background-color: #4a4a4a;
+}
+.Checkout-Form{
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px 0;
+}
+.label-custom {
+  font-weight: 200;
+  text-align: left;
+  display: block; /* Ensures label behaves as a block element */
+}
+.input-custom {
+  display: block;
+  width: 100%; /* Make sure the input takes the full width */
+  margin-bottom: 10px; /* Space between input fields */
+  padding: 8px; /* Adds some padding inside the input */
+  border-radius: 8px; /* Adjust this value for more or less rounded corners */
+  border: 1px solid #ccc; /* A subtle border to define the input field */
+  box-sizing: border-box;
+}
+.Address-Submit-Button{
+  background-color: #9e222c;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
 /* //////////////////// Inventory Page ////////////////// */
 .inventory {
   align-items: center;
